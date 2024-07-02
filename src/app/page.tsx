@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button, Htag, Ptag } from '@/components';
+import { Button, Htag, PageTag, Ptag } from '@/components';
 
 export default function Home() {
   return (
@@ -17,6 +17,10 @@ export default function Home() {
         officiis, laborum aperiam a exercitationem nesciunt hic itaque sunt
         reprehenderit blanditiis!
       </Ptag>
+      <PageTag size='small' color='ghost'>Ghost</PageTag>
+      <PageTag size='medium' color='red'>Red</PageTag>
+      <PageTag size='medium' color='green'>Green</PageTag>
+      <PageTag size='medium' color='primary'>Primary</PageTag>
     </main>
   );
 }
