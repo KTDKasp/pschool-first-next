@@ -1,9 +1,9 @@
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './PageTag.module.css';
 
 export interface PageTagProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   children: React.ReactNode;
   size?: 'small' | 'medium';
   color?: 'gray' | 'green' | 'primary' | 'red' | 'ghost';

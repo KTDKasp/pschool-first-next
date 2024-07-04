@@ -2,10 +2,10 @@
   display: inline-block;
   margin-right: 5px;
   border-radius: 20px;
+  padding: 5px 10px;
 }
 
 .small {
-  padding: 5px 10px;
   font-size: 12px;
   line-height: 12px;
 }
