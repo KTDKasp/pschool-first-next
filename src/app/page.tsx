@@ -1,5 +1,3 @@
-'use client'
-
 import { Button, Htag, PageTag, Ptag, Rating } from '@/components';
 
 export default function Home() {
