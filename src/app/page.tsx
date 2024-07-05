@@ -1,6 +1,19 @@
+import { API } from '@/api';
 import { Button, Htag, PageTag, Ptag, Rating } from '@/components';
 
-export default function Home() {
+async function getMenu(firstCategory: number): Promise<any[]> {
+  const res = await fetch(API.topPage.find, {
+    method: 'POST',
+    body: JSON.stringify({
+      firstCategory,
+    }),
+    headers: new Headers({ 'content-type': 'application/json' })
+  });
+  return res.json();
+}
+
+export default async function Home() {
+  const menu = await getMenu(0)
   return (
     <main>
       <Htag tag="h3">Htag</Htag>
@@ -22,6 +35,12 @@ export default function Home() {
       <PageTag size='medium' color='primary'>Primary</PageTag>
       <Rating isEditable={true} rating={4}/>
       <Rating rating={3}/>
+      <div>
+        {JSON.stringify(menu)}
+      </div>
+      <div>
+        {menu.length}
+      </div>
     </main>
   );
 }
