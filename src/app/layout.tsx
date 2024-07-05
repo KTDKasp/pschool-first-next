@@ -6,6 +6,8 @@ import { Footer } from './components/Footer';
 
 import styles from './MainLayout.module.css';
 import './globals.css';
+import { Menu } from './components/Menu';
+import Link from 'next/link';
 
 const noto_sans = Noto_Sans_KR({ subsets: ['latin'] });
 
@@ -24,7 +26,9 @@ export default function RootLayout({
       <body className={noto_sans.className}>
         <div className={styles.wrapper}>
           <Header className={styles.header}>Content Header</Header>
-          <Sidebar className={styles.sidebar}>Content Sidebar</Sidebar>
+          <Sidebar className={styles.sidebar}>
+            <Menu />
+          </Sidebar>
           <div className={styles.body}>{children}</div>
           <Footer className={styles.footer}>Content Footer</Footer>
         </div>

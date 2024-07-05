@@ -28,7 +28,7 @@
   line-height: 16px;
 }
 
-.secondBlock {
+.secondLevelBlock {
   margin-top: 15px;
   margin-left: 12px;
   padding-left: 32px;
@@ -47,6 +47,18 @@
   font-size: 14px;
   line-height: 19px;
 }
+/* 
+.thirdLevel {
+  display: block;
+  padding-bottom: 10px;
+  cursor: pointer;
+  color: var(--gray-dark);
+  outline-offset: -1px;
+  font-size: 12px;
+  font-weight: 500;
+  border-left: 1px solid #DFDFDF;
+  padding-left: 10px;
+} */
 
 .thirdLevelActive, .thirdLevel:hover {
   color: var(--primary);
