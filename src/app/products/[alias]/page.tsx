@@ -1,10 +1,15 @@
-import { API } from "@/api";
+import { getMenu } from "@/api/menu";
+import { getPage } from "@/api/page";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export async function getPage(alias: string): Promise<any | null> {
-  const res = await fetch(API.topPage.byAlias + alias);
-  if (!res.ok) return null;
-  return res.json();
+export const metadata: Metadata = {
+  title: "Products Page"
+}
+
+export async function generateStaticParams() { 
+  const menu = await getMenu(0);
+  return menu.flatMap(item => item.pages.map(page => ({ alias: page.alias })))
 }
 
 export default async function PageProducts({ params }: { params: { alias: string } } ) {
