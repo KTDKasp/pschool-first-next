@@ -28,11 +28,19 @@
   line-height: 16px;
 }
 
-.secondLevelBlock {
-  margin-top: 15px;
+.secondBlock {
+    margin-top: 15px;
   margin-left: 12px;
   padding-left: 32px;
   border-left: 1px solid #DFDFDF;
+}
+
+.secondLevelBlock {
+  display: none;
+}
+
+.secondLevelBlockOpened {
+  display: block;
 }
 
 .secondLevelBlockOpened:last-child {
