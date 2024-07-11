@@ -45,10 +45,26 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 export const Menu = async (): Promise<JSX.Element> => {
   const firstMenuCategory = TopLevelCategory.Courses;
   const mainMenu = await getMenu(firstMenuCategory);
-  
+
+  async function getAllMenu() {
+    const allMenu = [];
+    for (let i = 0; i < 4; i++) {
+      const menu = await getMenu(i);
+      allMenu.push(menu);
+    }
+    return allMenu;
+  }
+
+  const [menu0, menu1, menu2, menu3] = await getAllMenu();
+
   return (
     <div className={styles.menu}>
-      <BuildFirstLevel firstCategory={firstMenuCategory} mainMenu={mainMenu} />
+      <BuildFirstLevel firstCategory={firstMenuCategory} mainMenu={{
+        courses: menu0,
+        services: menu1,
+        books: menu2,
+        products: menu3
+      }} />
     </div>
   );
 };
