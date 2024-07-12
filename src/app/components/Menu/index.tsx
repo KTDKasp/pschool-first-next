@@ -1,9 +1,6 @@
 import {
   FirstLevelMenuItem,
-  MenuItem,
-  PageItem,
 } from '@/interfaces/menu.interface';
-import cn from 'classnames';
 
 import CoursesIcon from '../../../../public/svg/grad-hat.svg';
 import ServicesIcon from '../../../../public/svg/cloud.svg';
@@ -13,7 +10,7 @@ import { TopLevelCategory } from '@/interfaces/page.interface';
 import { getMenu } from '@/api/menu';
 
 import styles from './Menu.module.css';
-import { BuildFirstLevel } from './Menu1Lvl';
+import { BuildFirstLevel } from './MenuComponent';
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -49,8 +46,8 @@ export const Menu = async (): Promise<JSX.Element> => {
   async function getAllMenu() {
     const allMenu = [];
     for (let i = 0; i < 4; i++) {
-      const menu = await getMenu(i);
-      allMenu.push(menu);
+      const data = await getMenu(i)
+      allMenu.push(data);
     }
     return allMenu;
   }
@@ -59,11 +56,9 @@ export const Menu = async (): Promise<JSX.Element> => {
 
   return (
     <div className={styles.menu}>
-      <BuildFirstLevel firstCategory={firstMenuCategory} mainMenu={{
-        courses: menu0,
-        services: menu1,
-        books: menu2,
-        products: menu3
+      {/* {buildFirstLevel(firstMenuCategory)} */}
+      <BuildFirstLevel firstCategory={firstMenuCategory} menu={{
+        courses: menu0, services: menu1, books: menu2, products: menu3
       }} />
     </div>
   );

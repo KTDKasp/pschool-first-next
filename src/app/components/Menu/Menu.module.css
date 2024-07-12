@@ -17,6 +17,12 @@
   fill: var(--primary);
 }
 
+.secondBlock {
+  padding-left: 15px;
+  border-left: 1px solid #DFDFDF;
+  margin-left: 10px;
+}
+
 .secondLevel {
   margin-bottom: 10px;
   cursor: pointer;
@@ -28,19 +34,16 @@
   line-height: 16px;
 }
 
-.secondBlock {
-    margin-top: 15px;
-  margin-left: 12px;
-  padding-left: 32px;
-  border-left: 1px solid #DFDFDF;
-}
-
 .secondLevelBlock {
   display: none;
 }
 
 .secondLevelBlockOpened {
   display: block;
+  margin-top: 15px;
+  margin-left: 12px;
+  padding-left: 32px;
+  border-left: 1px solid #DFDFDF;
 }
 
 .secondLevelBlockOpened:last-child {
