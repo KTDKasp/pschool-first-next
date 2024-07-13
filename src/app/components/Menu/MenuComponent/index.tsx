@@ -6,7 +6,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 
 import { TopLevelCategory } from '@/interfaces/page.interface';
-import { firstLevelMenu } from '../index';
+import { firstLevelMenu } from '@/helpers/helpers';
 import {
   FirstLevelMenuItem,
   MenuItem,

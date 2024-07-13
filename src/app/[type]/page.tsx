@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Courses",
 }
 
-export default async function PageCoursesAll() {
+export default async function TopPageAll() {
   return (
     <div>
       All Courses
